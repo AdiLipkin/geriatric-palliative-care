@@ -1,37 +1,48 @@
 import React, { useState } from 'react';
 
-const foundersData = [
+export default function Founders({ t }) {
+  const [selectedFounder, setSelectedFounder] = useState(null);
+
+  const foundersData = [
   {
     id: 1,
-    name: "Jane Doe, RN, BSN",
-    role: "Lead Geriatric Specialist",
-    bio: "Over 15 years of experience in senior care.",
-    cv: "Jane has dedicated her career to elder care, specializing in dementia support and chronic illness management. She holds a BSN from State University and is certified in Palliative Care."
+    name: "אסיה ליפקין, RN, MPH, NP",
+    role: "מומחית קלינית בגריאטריה",
+    bio: "מנהלת מערך אשפוז גריאטרי עם למעלה מ-25 שנות ניסיון בסיעוד ובריאות הציבור.",
+    cv: `ניסיון תעסוקתי נבחר:\n
+• 2020-היום: מנהלת מערך אשפוז גריאטרי, ביה"ח "משגב לדך", ירושלים.\n
+• 2015-2020: אחות ראשית, בית האבות "עידן הזהב", ירושלים.\n
+• 2007-2015: אחות ראשית, בית האבות "בית סבאבא", רמת רחל.\n
+• 1995-2007: אחות טיפול נמרץ, "הדסה הר הצופים".\n
+
+השכלה והכשרה:\n
+• מומחיות קלינית בגריאטריה (ביה"ס לסיעוד שיינברון).\n
+• תואר שני (MPH) בבריאות הציבור, כלכלה וניהול - האוניברסיטה העברית.\n
+• תואר ראשון (BSN) בסיעוד - האוניברסיטה העברית.\n
+• השתלמויות על-בסיסיות: גריאטריה, אתיקה בטיפול בזקן, מניעת זיהומים ואיתור התעללות בזקנים.`
   },
   {
     id: 2,
-    name: "Sarah Smith, NP",
+    // ... הנתונים של האחות השנייה יכנסו לכאן ...
+    name: "תמרה סטרטקובסקי, NP",
     role: "Palliative Nurse Practitioner",
     bio: "Focuses on pain management and family counseling.",
-    cv: "Sarah is a licensed Nurse Practitioner with advanced training in hospice and palliative medicine. She focuses on holistic pain management and providing emotional support to families."
+    cv: "Sarah is a licensed Nurse Practitioner..."
   }
 ];
-
-export default function Founders() {
-  const [selectedFounder, setSelectedFounder] = useState(null);
 
   return (
     <section id="about" className="section bg-white">
       <div className="container">
-        <h2>Meet Our Founders</h2>
-        
+        <h2>{t.heading}</h2>
+
         <div className="grid-2">
           {foundersData.map((founder) => (
             <div key={founder.id} className="founder-card">
-              <button 
+              <button
                 onClick={() => setSelectedFounder(founder)}
                 className="founder-img-placeholder"
-                aria-label={`View resume for ${founder.name}`}
+                aria-label={`${t.buttonLabel} ${founder.name}`}
               >
                 Photo
               </button>
@@ -45,7 +56,7 @@ export default function Founders() {
 
       {selectedFounder && (
         <div className="modal-overlay" onClick={() => setSelectedFounder(null)}>
-          <div className="modal-content" onClick={e => e.stopPropagation()}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setSelectedFounder(null)}>&times;</button>
             <h3>{selectedFounder.name}</h3>
             <p style={{ fontWeight: 'bold' }}>{selectedFounder.role}</p>

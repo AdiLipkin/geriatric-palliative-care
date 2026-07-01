@@ -1,20 +1,130 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Founders from './components/Founders';
 import Services from './components/Services';
 import BookingForm from './components/BookingForm';
 
+const content = {
+  en: {
+    nav: { home: 'Home', about: 'About Us', booking: 'Book Appointment', toggle: 'עברית' },
+    hero: {
+      title: 'Dignity, Comfort, and Expert Care',
+      text: 'Specializing in Geriatric and Palliative Care. We provide warm, compassionate, and professional support for the elderly and their families, ensuring quality of life at every stage.',
+      cta: 'Request an Assessment'
+    },
+    services: {
+      heading: 'Our Services',
+      items: [
+        { title: 'In-Home Assessment', desc: 'Comprehensive home environment and health evaluations.' },
+        { title: 'Palliative Pain Management', desc: 'Advanced protocols to ensure comfort and dignity.' },
+        { title: 'Family Counseling', desc: 'Guided support sessions for loved ones navigating care transitions.' }
+      ]
+    },
+    founders: {
+      heading: 'Meet Our Founders',
+      buttonLabel: 'View resume for',
+      founder1: {
+        name: 'Jane Doe, RN, BSN',
+        role: 'Lead Geriatric Specialist',
+        bio: 'Over 15 years of experience in senior care.',
+        cv: 'Jane has dedicated her career to elder care, specializing in dementia support and chronic illness management. She holds a BSN from State University and is certified in Palliative Care.'
+      },
+      founder2: {
+        name: 'Sarah Smith, NP',
+        role: 'Palliative Nurse Practitioner',
+        bio: 'Focuses on pain management and family counseling.',
+        cv: 'Sarah is a licensed Nurse Practitioner with advanced training in hospice and palliative medicine. She focuses on holistic pain management and providing emotional support to families.'
+      }
+    },
+    booking: {
+      heading: 'Book an Appointment',
+      successTitle: 'Appointment Requested Successfully!',
+      successMessage: 'Thank you, {name}. We will call you shortly at {phone} to confirm your visit.',
+      button: 'Book another appointment',
+      name: 'Full Name',
+      phone: 'Phone Number',
+      date: 'Preferred Date',
+      time: 'Preferred Time',
+      reason: 'Reason for Visit',
+      timeOptions: [
+        { value: '', label: 'Select a time...' },
+        { value: 'Morning', label: 'Morning (9AM - 12PM)' },
+        { value: 'Afternoon', label: 'Afternoon (12PM - 4PM)' }
+      ],
+      submit: 'Submit Request'
+    },
+    footer: 'Compassionate Care Clinic. All rights reserved.'
+  },
+  he: {
+    nav: { home: 'בית', about: 'עלינו', booking: 'לקבוע תור', toggle: 'English' },
+    hero: {
+      title: 'טיפול מכל הלב קרוב לבית',
+      text: 'מתמחים בטיפול גריאטרי ופאליאטיבי. אנו מספקים תמיכה חמה, מסורה ומקצועית לגיל השלישי ומשפחותיהם, ומבטיחים איכות חיים בכל שלב.',
+      cta: 'בקשת הערכה'
+    },
+    services: {
+      heading: 'השירותים שלנו',
+      items: [
+        { title: 'הערכת בית', desc: 'הערכות מקיפות של הסביבה הביתית והמצב הרפואי.' },
+        { title: 'ניהול כאבים פאליאטיבי', desc: 'פרוטוקולים מתקדמים להבטחת נוחות וכבוד.' },
+        { title: 'ייעוץ משפחתי', desc: 'מפגשי תמיכה המנחים בני משפחה העוברים תקופות של מעבר בטיפול.' }
+      ]
+    },
+    founders: {
+      heading: 'הכירו את המייסדים שלנו',
+      buttonLabel: 'הצגת קורות חיים עבור',
+      founder1: {
+        name: 'ג׳יין דו, RN, BSN',
+        role: 'מומחית גריאטרית ראשית',
+        bio: 'מעל 15 שנות ניסיון בטיפול במבוגרים.',
+        cv: 'ג׳יין הקדישה את הקריירה שלה לטיפול בקשישים, עם התמחות בתמיכה בלקויות זיכרון וניהול מחלות כרוניות. היא בעלת BSN מאוניברסיטת המדינה ומוסמכת בטיפול פאליאטיבי.'
+      },
+      founder2: {
+        name: 'שרה סמית, NP',
+        role: 'מתרגלת סיעודית פאליאטיבית',
+        bio: 'מתמקדת בניהול כאבים וייעוץ משפחתי.',
+        cv: 'שרה היא רופאה מוסמכת עם הכשרה מתקדמת ברפואה פליאטיבית ומסייעת לניהול כאבים הוליסטי ולתמיכה רגשית במשפחות.'
+      }
+    },
+    booking: {
+      heading: 'לקבוע תור',
+      successTitle: 'הבקשה לתור נשלחה בהצלחה!',
+      successMessage: 'תודה, {name}. אנחנו נחזור אליך בקרוב בטלפון {phone} לאישור הביקור.',
+      button: 'לקבוע תור נוסף',
+      name: 'שם מלא',
+      phone: 'מספר טלפון',
+      date: 'תאריך מועדף',
+      time: 'שעת מועדפת',
+      reason: 'סיבת הביקור',
+      timeOptions: [
+        { value: '', label: 'בחר שעה...' },
+        { value: 'Morning', label: 'בוקר (09:00-12:00)' },
+        { value: 'Afternoon', label: 'אחר הצהריים (12:00-16:00)' }
+      ],
+      submit: 'שלח בקשה'
+    },
+    footer: 'מרכז טיפול מסור. כל הזכויות שמורות.'
+  }
+};
+
 export default function App() {
+  const [language, setLanguage] = useState('en');
+  const t = content[language];
+
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <Founders />
-      <Services />
-      <BookingForm />
+    <div style={{ direction: language === 'he' ? 'rtl' : 'ltr' }}>
+      <Navbar
+        t={t.nav}
+        language={language}
+        onToggleLanguage={() => setLanguage((current) => (current === 'en' ? 'he' : 'en'))}
+      />
+      <Hero t={t.hero} />
+      <Founders t={t.founders} />
+      <Services t={t.services} />
+      <BookingForm t={t.booking} />
       <footer style={{ background: 'var(--teal-900)', color: 'white', textAlign: 'center', padding: '2rem' }}>
-        <p>&copy; {new Date().getFullYear()} Compassionate Care Clinic. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} {t.footer}</p>
       </footer>
     </div>
   );

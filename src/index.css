@@ -4,12 +4,12 @@
   --teal-800: #115e59;
   --teal-700: #0f766e;
   --teal-50: #f0fdfa;
-  
+
   --stone-900: #1c1917;
   --stone-600: #57534e;
   --stone-200: #e7e5e4;
   --stone-50: #fafaf9;
-  
+
   --white: #ffffff;
   --radius: 8px;
 }
@@ -28,7 +28,7 @@ html {
 }
 
 .container {
-  max-w-width: 1000px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -51,10 +51,24 @@ p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
   align-items: center;
   z-index: 100;
 }
+.navbar-rtl {
+  direction: rtl;
+}
 .nav-brand { font-size: 1.5rem; font-weight: bold; color: var(--teal-800); }
 .nav-links { display: flex; gap: 1.5rem; list-style: none; }
 .nav-links a { text-decoration: none; color: var(--stone-600); font-weight: 500; }
 .nav-links a:hover { color: var(--teal-700); }
+.lang-toggle {
+  background: transparent;
+  border: 1px solid var(--teal-700);
+  color: var(--teal-700);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.lang-toggle:hover { background: var(--teal-50); }
 
 /* Buttons */
 .btn-primary {

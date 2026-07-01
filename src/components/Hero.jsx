@@ -1,14 +1,14 @@
 import React from 'react';
 
-export default function Hero() {
+export default function Hero({ t }) {
   return (
     <section id="home" className="section bg-light">
       <div className="container hero-content">
-        <h1>Dignity, Comfort, and Expert Care</h1>
+        <h1>{t.title}</h1>
         <p style={{ fontSize: '1.1rem', marginBottom: '2rem' }}>
-          Specializing in Geriatric and Palliative Care. We provide warm, compassionate, and professional support for the elderly and their families, ensuring quality of life at every stage.
+          {t.text}
         </p>
-        <a href="#booking" className="btn-primary">Request an Assessment</a>
+        <a href="#booking" className="btn-primary">{t.cta}</a>
       </div>
     </section>
   );
