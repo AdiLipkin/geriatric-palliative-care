@@ -7,10 +7,10 @@ import BookingForm from './components/BookingForm';
 
 const content = {
   en: {
-    nav: { home: 'Home', about: 'About Us', booking: 'Book Appointment', toggle: 'עברית' },
+    nav: { brand: 'Compassionate Care', home: 'Home', about: 'About Us', booking: 'Book Appointment', toggle: 'עברית' },
     hero: {
       title: 'Dignity, Comfort, and Expert Care',
-      text: 'Specializing in Geriatric and Palliative Care. We provide warm, compassionate, and professional support for the elderly and their families, ensuring quality of life at every stage.',
+      text: 'Specializing in geriatric and palliative care for older adults. Our team delivers warm, compassionate support that helps families feel confident and secure.',
       cta: 'Request an Assessment'
     },
     services: {
@@ -22,7 +22,7 @@ const content = {
       ]
     },
     founders: {
-      heading: 'Meet Our Founders',
+      heading: 'Our Expertise Team',
       buttonLabel: 'View resume for',
       founder1: {
         name: 'Jane Doe, RN, BSN',
@@ -57,10 +57,10 @@ const content = {
     footer: 'Compassionate Care Clinic. All rights reserved.'
   },
   he: {
-    nav: { home: 'בית', about: 'עלינו', booking: 'לקבוע תור', toggle: 'English' },
+    nav: { brand: 'מרכז טיפול מסור', home: 'בית', about: 'עלינו', booking: 'לקבוע תור', toggle: 'English' },
     hero: {
       title: 'טיפול מכל הלב קרוב לבית',
-      text: 'מתמחים בטיפול גריאטרי ופאליאטיבי. אנו מספקים תמיכה חמה, מסורה ומקצועית לגיל השלישי ומשפחותיהם, ומבטיחים איכות חיים בכל שלב.',
+      text: 'מתמחים בטיפול גריאטרי ופאליאטיבי למבוגרים. צוותנו מעניק תמיכה חמה, מסורה ומקצועית שמחזקת את המשפחה ושומרת על איכות חיים.',
       cta: 'בקשת הערכה'
     },
     services: {
@@ -72,7 +72,7 @@ const content = {
       ]
     },
     founders: {
-      heading: 'הכירו את המייסדים שלנו',
+      heading: 'צוות המומחיות שלנו',
       buttonLabel: 'הצגת קורות חיים עבור',
       founder1: {
         name: 'ג׳יין דו, RN, BSN',
@@ -113,14 +113,15 @@ export default function App() {
   const t = content[language];
 
   return (
-    <div style={{ direction: language === 'he' ? 'rtl' : 'ltr' }}>
+    <div className="app-root" style={{ direction: language === 'he' ? 'rtl' : 'ltr' }}>
       <Navbar
         t={t.nav}
+        brand={t.nav.brand}
         language={language}
         onToggleLanguage={() => setLanguage((current) => (current === 'en' ? 'he' : 'en'))}
       />
       <Hero t={t.hero} />
-      <Founders t={t.founders} />
+      <Founders t={t.founders} language={language} />
       <Services t={t.services} />
       <BookingForm t={t.booking} />
       <footer style={{ background: 'var(--teal-900)', color: 'white', textAlign: 'center', padding: '2rem' }}>
