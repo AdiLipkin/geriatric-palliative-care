@@ -44,6 +44,14 @@ h2 { font-size: 2rem; margin-bottom: 2rem; text-align: center; }
 h3 { font-size: 1.5rem; color: var(--teal-900); margin-bottom: 0.5rem; }
 p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
 
+/* Mobile Breakpoints */
+@media (max-width: 640px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.4rem; margin-bottom: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  p { font-size: 0.95rem; }
+}
+
 /* Navigation */
 .navbar {
   position: sticky;
@@ -103,6 +111,35 @@ p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
   transform: translateY(-1px);
 }
 
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0.75rem 15px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .nav-brand {
+    font-size: 1.2rem;
+    flex: 1;
+  }
+  .navbar-right {
+    gap: 0.5rem;
+  }
+  .nav-links {
+    gap: 1rem;
+    order: 3;
+    flex-basis: 100%;
+    margin-top: 0.5rem;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .lang-toggle {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
 /* Buttons */
 .btn-primary {
   background: var(--teal-700);
@@ -115,13 +152,27 @@ p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+  transition: background 0.2s ease;
 }
 .btn-primary:hover { background: var(--teal-800); }
+
+@media (max-width: 640px) {
+  .btn-primary {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.95rem;
+    display: block;
+    width: 100%;
+  }
+}
 
 /* Layouts */
 .section { padding: 5rem 0; }
 .bg-light { background-color: var(--teal-50); }
 .bg-white { background-color: var(--white); }
+
+@media (max-width: 640px) {
+  .section { padding: 2.5rem 0; }
+}
 
 .grid-2 { display: grid; gap: 2rem; grid-template-columns: 1fr; }
 .grid-3 { display: grid; gap: 2rem; grid-template-columns: 1fr; }
@@ -131,8 +182,16 @@ p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
   h1 { font-size: 3rem; }
 }
 
+@media (max-width: 640px) {
+  .grid-2, .grid-3 { gap: 1.5rem; }
+}
+
 /* Specific Component Styles */
 .hero-content { text-align: center; max-width: 700px; margin: 0 auto; }
+
+@media (max-width: 640px) {
+  .hero-content { padding: 0 15px; }
+}
 
 .founder-card {
   text-align: center;
@@ -141,6 +200,12 @@ p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
   border-radius: calc(var(--radius) * 1.2);
   border: 1px solid var(--stone-200);
   box-shadow: 0 18px 40px rgba(20, 78, 74, 0.06);
+}
+
+@media (max-width: 640px) {
+  .founder-card {
+    padding: 1.5rem 1rem;
+  }
 }
 
 .founders-grid {
@@ -164,6 +229,14 @@ p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
 .founder-img-placeholder:hover {
   border-color: var(--teal-700);
   transform: translateY(-3px);
+}
+
+@media (max-width: 640px) {
+  .founder-img-placeholder {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+  }
 }
 
 .founder-img {
@@ -206,6 +279,15 @@ p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
   border-color: rgba(20, 118, 110, 0.15);
 }
 
+@media (max-width: 640px) {
+  .service-card {
+    padding: 1.5rem 1rem;
+  }
+  .service-card:hover {
+    transform: none;
+  }
+}
+
 /* Form Styles */
 .form-group { margin-bottom: 1.5rem; }
 .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
@@ -215,8 +297,18 @@ p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
   border: 1px solid var(--stone-200);
   border-radius: var(--radius);
   font-family: inherit;
+  font-size: 1rem;
 }
 .form-control:focus { outline: 2px solid var(--teal-700); }
+
+@media (max-width: 640px) {
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .form-control {
+    padding: 0.7rem;
+    font-size: 16px;
+  }
+}
 
 /* Modal Styles */
 .modal-overlay {
@@ -236,10 +328,29 @@ p { line-height: 1.6; margin-bottom: 1rem; color: var(--stone-600); }
   max-width: 500px;
   width: 100%;
   position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 .modal-close {
   position: absolute;
   top: 1rem; right: 1rem;
   background: none; border: none;
   font-size: 1.5rem; cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 15px;
+    align-items: flex-start;
+  }
+  .modal-content {
+    padding: 1.5rem;
+    margin-top: 30px;
+    max-height: 80vh;
+  }
+  .modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.25rem;
+  }
 }
