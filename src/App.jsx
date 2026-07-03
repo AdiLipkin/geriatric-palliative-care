@@ -13,6 +13,28 @@ const content = {
       text: 'Specializing in geriatric and palliative care for older adults. Our team delivers warm, compassionate support that helps families feel confident and secure.',
       cta: 'Request an Assessment'
     },
+    videos: {
+  heading: 'Care Area Explainer Videos',
+  intro: 'These short videos, generated using AI, provide a clear and general overview of our main areas of care.',
+  fallbackText: 'Your browser does not support the video tag.',
+  items: [
+    { 
+      title: 'Palliative Care', 
+      caption: 'A compassionate approach to symptom relief, emotional support, and improving the quality of life for the patient and their family.', 
+      file: 'video1.mp4' 
+    },
+    { 
+      title: 'Comprehensive Geriatric Assessment', 
+      caption: 'An in-depth evaluation of function, cognition, and overall health to tailor a personalized care plan for older adults.', 
+      file: 'video2.mp4' 
+    },
+    { 
+      title: 'Diabetic Foot Care', 
+      caption: 'Expertise in diagnosis, prevention, and professional treatment to maintain foot health and prevent complications.', 
+      file: 'video3.mp4' 
+    }
+  ]
+},
     services: {
       heading: 'Our Services',
       items: [
@@ -63,6 +85,28 @@ const content = {
       text: 'מתמחים בטיפול גריאטרי ופאליאטיבי למבוגרים. צוותנו מעניק תמיכה חמה, מסורה ומקצועית שמחזקת את המשפחה ושומרת על איכות חיים.',
       cta: 'בקשת הערכה'
     },
+   videos: {
+  heading: 'סרטוני הסבר על תחומי הטיפול שלנו',
+  intro: 'סרטונים קצרים אלה, שנוצרו באמצעות בינה מלאכותית (AI), מספקים סקירה כללית וברורה על נושאי הטיפול המרכזיים שלנו.',
+  fallbackText: 'הדפדפן שלך אינו תומך בהפעלת וידאו.',
+  items: [
+    { 
+      title: 'טיפול פליאטיבי', 
+      caption: 'גישה חומלת להקלה על תסמינים, תמיכה רגשית ושיפור איכות החיים של המטופל ומשפחתו.', 
+      file: 'video1.mp4' 
+    },
+    { 
+      title: 'הערכה גריאטרית כוללנית', 
+      caption: 'אבחון מקיף של תפקוד, קוגניציה ובריאות כללית להתאמת תוכנית טיפול אישית לגיל השלישי.', 
+      file: 'video2.mp4' 
+    },
+    { 
+      title: 'טיפול ברגל סוכרתית', 
+      caption: 'מומחיות באבחון, מניעה וטיפול מקצועי לשמירה על בריאות כף הרגל ומניעת סיבוכים.', 
+      file: 'video3.mp4' 
+    }
+  ]
+},
     services: {
       heading: 'השירותים שלנו',
       items: [
@@ -121,6 +165,26 @@ export default function App() {
         onToggleLanguage={() => setLanguage((current) => (current === 'en' ? 'he' : 'en'))}
       />
       <Hero t={t.hero} />
+      <section className="section bg-light" id="videos">
+        <div className="container">
+          <div className="section-heading">
+            <h2>{t.videos.heading}</h2>
+            <p>{t.videos.intro}</p>
+          </div>
+          <div className="video-grid">
+            {t.videos.items.map((video) => (
+              <article className="video-card" key={video.title}>
+                <video className="video-player" controls preload="metadata" playsInline>
+                  <source src={`/src/assets/${video.file}`} type="video/mp4" />
+                  {t.videos.fallbackText}
+                </video>
+                <h3>{video.title}</h3>
+                <p>{video.caption}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
       <Founders t={t.founders} language={language} />
       <Services t={t.services} />
       <BookingForm t={t.booking} />
