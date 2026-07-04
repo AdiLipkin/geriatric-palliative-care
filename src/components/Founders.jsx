@@ -47,8 +47,8 @@ Education and training:
       englishName: "Tamara Tartakovsky",
       role: "מומחית קלינית בטיפול תומך (פליאטיבי)",
       englishRole: "Palliative Care Clinical Specialist",
-      bio: "מנהלת סיעוד ואחות מומחית עם ניסיון עשיר בניהול מרפאות, הדרכה קלינית וטיפול פליאטיבי.",
-      englishBio: "Nursing director and clinical expert with extensive experience in clinic management, clinical training, and palliative care.",
+      bio: "מנהלת סיעוד, בעלת תואר שני בסיעוד (MSN) ומומחית קלינית בטיפול פליאטיבי עם ניסיון נרחב בניהול קליניקה, הכשרה קלינית וטיפול בחולים מורכבים בקהילה.",
+      englishBio: "Nursing director, MSN holder and clinical expert in palliative care with extensive experience in clinic management, clinical training and care of complex patients in the community",
       cv: `ניסיון תעסוקתי נבחר:
 • 2019-היום: מנהלת סיעוד מרכז רפואי יהלום, מחוז ירושלים (כללית). אחראית מתחמי חיסונים.
 • 2017-2019: מנהלת סיעוד מרפאת לב תלפיות ראשונית, מחוז ירושלים.

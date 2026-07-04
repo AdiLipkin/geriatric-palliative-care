@@ -38,25 +38,25 @@ const content = {
     services: {
       heading: 'Our Services',
       items: [
-        { title: 'In-Home Assessment', desc: 'Comprehensive home environment and health evaluations.' },
-        { title: 'Palliative Pain Management', desc: 'Advanced protocols to ensure comfort and dignity.' },
-        { title: 'Family Counseling', desc: 'Guided support sessions for loved ones navigating care transitions.' }
+        { title: 'Geriatric Care', desc: 'In addition to geriatric assessments, we provide interventions that address, relieve, and help restore balance in the patient’s condition.' },
+        { title: 'Palliative Care', desc: 'Assessment, guidance, support, and improved quality of life for the patient and family through prevention, balance, and relief of symptom burden while addressing physical, emotional, and spiritual needs.' },
+        { title: 'Complex Symptom Relief', desc: 'Relief of pain, nausea, constipation, fatigue, shortness of breath, confusion, and restlessness.' }
       ]
     },
     founders: {
-      heading: 'Our Expertise Team',
+      heading: 'About Us',
       buttonLabel: 'View resume for',
       founder1: {
-        name: 'Jane Doe, RN, BSN',
-        role: 'Lead Geriatric Specialist',
-        bio: 'Over 15 years of experience in senior care.',
-        cv: 'Jane has dedicated her career to elder care, specializing in dementia support and chronic illness management. She holds a BSN from State University and is certified in Palliative Care.'
+        name: 'Assia Lipkin, RN, MSN',
+        role: 'Lead Geriatric and Palliative Care Specialist',
+        bio: 'Nursing manager with a Master of Science in Nursing and broad experience in clinic management, clinical training, and care for complex patients in the community.',
+        cv: 'Nursing manager with a Master of Science in Nursing and broad experience in clinic management, clinical training, and care for complex patients in the community.'
       },
       founder2: {
-        name: 'Sarah Smith, NP',
+        name: 'Tamara Tartakovsky, NP',
         role: 'Palliative Nurse Practitioner',
-        bio: 'Focuses on pain management and family counseling.',
-        cv: 'Sarah is a licensed Nurse Practitioner with advanced training in hospice and palliative medicine. She focuses on holistic pain management and providing emotional support to families.'
+        bio: 'Focused on pain management, symptom relief, and family support.',
+        cv: 'Tamara is a licensed Nurse Practitioner with advanced training in palliative medicine, dedicated to holistic symptom management and compassionate family support.'
       }
     },
     booking: {
@@ -110,25 +110,25 @@ const content = {
     services: {
       heading: 'השירותים שלנו',
       items: [
-        { title: 'הערכת בית', desc: 'הערכות מקיפות של הסביבה הביתית והמצב הרפואי.' },
-        { title: 'ניהול כאבים פאליאטיבי', desc: 'פרוטוקולים מתקדמים להבטחת נוחות וכבוד.' },
-        { title: 'ייעוץ משפחתי', desc: 'מפגשי תמיכה המנחים בני משפחה העוברים תקופות של מעבר בטיפול.' }
+        { title: 'טיפול גריאטרי', desc: 'בנוסף להערכות גריאטריות, אנו מספקים התערבויות המטפלות, מקלות ויוצרות איזון במצב המטופל.' },
+        { title: 'טיפול פליאטיבי', desc: 'הערכה, ליווי ותמיכה, ושיפור איכות החיים של המטופל ומשפחתו באמצעות מניעה, איזון והקלה על עומס הסימפטומים תוך מענה לצרכים גופניים, נפשיים ורוחניים.' },
+        { title: 'הקלה על סימפטומים מורכבים', desc: 'הקלה על כאב, בחילה, עצירות, תשישות, קוצר נשימה, בלבול וחוסר שקט.' }
       ]
     },
     founders: {
-      heading: 'צוות המומחיות שלנו',
+      heading: 'קצת עלינו',
       buttonLabel: 'הצגת קורות חיים עבור',
       founder1: {
-        name: 'ג׳יין דו, RN, BSN',
-        role: 'מומחית גריאטרית ראשית',
-        bio: 'מעל 15 שנות ניסיון בטיפול במבוגרים.',
-        cv: 'ג׳יין הקדישה את הקריירה שלה לטיפול בקשישים, עם התמחות בתמיכה בלקויות זיכרון וניהול מחלות כרוניות. היא בעלת BSN מאוניברסיטת המדינה ומוסמכת בטיפול פאליאטיבי.'
+        name: 'אסיה ליפקין, RN, MSN',
+        role: 'מומחית גריאטרית ופליאטיבית ראשית',
+        bio: 'מנהלת סיעוד, בעלת תואר שני בסיעוד (MSN) ומומחית קלינית בטיפול פליאטיבי עם ניסיון נרחב בניהול קליניקה, הכשרה קלינית וטיפול בחולים מורכבים בקהילה.',
+        cv: 'מנהלת סיעוד, בעלת תואר שני בסיעוד (MSN) ומומחית קלינית בטיפול פליאטיבי עם ניסיון נרחב בניהול קליניקה, הכשרה קלינית וטיפול בחולים מורכבים בקהילה.'
       },
       founder2: {
-        name: 'שרה סמית, NP',
-        role: 'מתרגלת סיעודית פאליאטיבית',
-        bio: 'מתמקדת בניהול כאבים וייעוץ משפחתי.',
-        cv: 'שרה היא רופאה מוסמכת עם הכשרה מתקדמת ברפואה פליאטיבית ומסייעת לניהול כאבים הוליסטי ולתמיכה רגשית במשפחות.'
+        name: 'תמרה טרטקובסקי, NP',
+        role: 'מתרגלת סיעודית פליאטיבית',
+        bio: 'מנהלת סיעוד, בעלת תואר שני בסיעוד (MSN) ומומחית קלינית בטיפול פליאטיבי עם ניסיון נרחב בניהול קליניקה, הכשרה קלינית וטיפול בחולים מורכבים בקהילה.',
+        cv: 'תמרה היא מתרגלת סיעודית מוסמכת עם הכשרה מתקדמת ברפואה פליאטיבית, המתמקדת בניהול סימפטומים הוליסטי ותמיכה חומלת במשפחות.'
       }
     },
     booking: {
